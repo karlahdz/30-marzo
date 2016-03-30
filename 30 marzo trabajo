@@ -14,3 +14,6 @@ aleat2<- grumamult$random
 ###para graficar estacionalidad
 ts.plot(cbind(tendad, tendad * estadi), lty=6:2, col=c(28,85))
 ts.plot(cbind(tendad2, tendad2 * estadi2), lty=89:2, col=c(1,85))
+require(XLConnect)
+Library(XLConnect)
+x <- loadworkbook("C:\\Users\\SALA-C21\\Downloads\\gruma.xls", create=TRUE) 
