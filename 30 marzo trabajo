@@ -1,0 +1,16 @@
+GRUMA<- ts(read.csv(("C:\\Users\\SALA-C21\\Downloads\\gruma.csv"), header= TRUE),frequency=252, start=2000)
+GRUMA
+##para descomponer una serie de tiempo utilizamos la función decompose()
+grumad <- decompose(GRUMA)
+grumamult <- decompose(GRUMA, type="mult")
+plot(grumad)
+plot (grumamult)
+tendad<- grumad$trend 
+estadi <-grumad$seasonal
+aleat<- grumad$random
+tendad2<- grumamult$trend 
+estadi2 <-grumamult$seasonal
+aleat2<- grumamult$random
+###para graficar estacionalidad
+ts.plot(cbind(tendad, tendad * estadi), lty=6:2, col=c(28,85))
+ts.plot(cbind(tendad2, tendad2 * estadi2), lty=89:2, col=c(1,85))
